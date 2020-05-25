@@ -22,3 +22,13 @@ Gazebo world file that includes the models
  - script folder:
 Gazebo world plugin C++ script
  - CMakeLists.txt file to link the C++ code to libraries# Robotics_Software_Engineer_Nanodegree-Udacity
+ 
+ ## Deployment
+ ```
+ cd 1-BuildMyWorld/world
+ gazebo apartment
+ ```
+ 
+ ## Example
+ 
+ <img src="images/preview.PNG" height=300>
