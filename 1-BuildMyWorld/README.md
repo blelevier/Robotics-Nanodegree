@@ -10,25 +10,55 @@ Pick a place where you want to deploy your robot, for example: your apartment, y
 4. Import at least one model from the Gazebo online library and implement it in your existing Gazebo world.
 5. Write a C++ World Plugin to interact with your world. Your code should display “Welcome to ’s World!” message as soon as you launch the Gazebo world file.
 
-## Submission Folder
+## Directory Structure
 
-Here are the files that you need to include in your project submission folder:
-
- - model folder:
-Any object or robot designed in the Model Editor tool of Gazebo
-A single floor structure designed in the Building Editor tool of Gazebo
- - world folder:
-Gazebo world file that includes the models
- - script folder:
-Gazebo world plugin C++ script
- - CMakeLists.txt file to link the C++ code to libraries# Robotics_Software_Engineer_Nanodegree-Udacity
+```
+    1-BuildMyWorld                     # Main folder 
+    ├── images                         # Code output image                   
+    │   ├── output.png
+    ├── model                          # Model files
+    │   ├── Building
+    │   │   ├── model.config
+    │   │   ├── model.sdf
+    │   ├── HumanoidRobot
+    │   │   ├── model.config
+    │   │   ├── model.sdf
+    ├── script                         # Gazebo World plugin C++ script      
+    │   ├── hello.cpp
+    ├── world                          # Gazebo world file that includes the models
+    │   ├── apartment
+    ├── CMakeLists.txt                 # Link libraries 
+    └──                              
+```
  
- ## Deployment
+## Deployment
+
+#### Step 1: Clone the repository
+We will be using "/home/workspace/" as an example directory, but feel free to change it according to your path.
+```sh
+cd /home/workspace/
+git clone https://github.com/blelevier/Robotics-Nanodegree.git
+```
+#### Step 2: Compile the code
+```sh
+cd /home/workspace/Robotics-Nanodegree/1-BuildMyWorld/
+mkdir build
+cd build/
+cmake ../
+make
+```
+
+#### Step 4 Add the library path to the Gazebo plugin path
+```sh
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/workspace/Robotics-Nanodegree/1-BuildMyWorld/build
+```
+
+#### Step 5 Run the Gazebo World file
  ```
- cd 1-BuildMyWorld/world
+ cd /home/workspace/Robotics-Nanodegree/1-BuildMyWorld/world
  gazebo apartment
  ```
  
- ## Example
+ ## Output
  
  <img src="images/preview.PNG" height=300>
